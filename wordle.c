@@ -55,3 +55,20 @@ int firstResult(const char *wordToFind, const char *propositionWord)
     int boolFirstResult = strcmp(wordToFind, propositionWord);
     return boolFirstResult;
 }
+
+int compareWords(char *wordToFind, char *propositionWord)
+{
+    int commonLetter = 0;
+    for (int i = 0; i < 5; ++i)
+    {
+        for (int j = 0; j < 5; ++j)
+        {
+            if (wordToFind[i] == propositionWord[j])
+            {
+                commonLetter++;
+                break;
+            }
+        }
+    }
+    return commonLetter;
+}

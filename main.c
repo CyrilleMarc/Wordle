@@ -5,6 +5,7 @@
 int loadFile(const char *filename, char ***wordsInListArray, int *sizeList);
 int findRandomWordInList(char **wordsInListArray, int sizeList, char *wordToFind);
 int firstResult(const char *wordToFind, const char *propositionWord);
+int compareWords(char *wordToFind, char *propositionWord);
 
 int main()
 {
@@ -55,6 +56,14 @@ int main()
         else
         {
             printf("Continuez\n");
+        }
+    }
+
+    int commonLetter = compareWords(wordToFind, propositionWord);
+    {
+        if (commonLetter)
+        {
+            printf("Score :%d\n", commonLetter);
         }
     }
     return 0;
