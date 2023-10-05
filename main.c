@@ -54,7 +54,7 @@ int main()
         }
         else
         {
-            printf("Your turn to play\n");
+            printf("Continuez\n");
         }
     }
     return 0;
