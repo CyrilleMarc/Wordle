@@ -5,15 +5,16 @@
 int loadFile(const char *filename, char ***wordsInListArray, int *sizeList);
 int findRandomWordInList(char **wordsInListArray, int sizeList, char *wordToFind);
 int firstResult(const char *wordToFind, const char *propositionWord);
-int compareWords(char *wordToFind, char *propositionWord);
+int compareScoring(const char *word1, const char *word2);
 
 int main()
 {
     char **wordsInListArray = NULL;
     int sizeList = 0;
     const char *filename = "liste.txt";
-    char wordToFind[6];
-    char propositionWord[6];
+    char wordToFind[6] = {0};
+    char propositionWord[6] = {0};
+    int tries = 5;
 
     srand(time(NULL));
 
@@ -45,9 +46,9 @@ int main()
         return 1;
     }
 
-    int boolFirstResult = firstResult(wordToFind, propositionWord);
+    int FirstResult = firstResult(wordToFind, propositionWord);
     {
-        if (boolFirstResult == 0)
+        if (FirstResult == 0)
         {
             printf("Bravo vous avez trouvé le mot!!!\n");
             int boolFoundWord = 1;
@@ -55,16 +56,22 @@ int main()
         }
         else
         {
-            printf("Continuez\n");
+            int commonLetter = scoring(wordToFind, propositionWord);
+            {
+                if (commonLetter)
+                {
+                    printf("Lettres en commun: \x1b[32m%d\x1b[0m\n", commonLetter);
+                }
+                else
+                {
+                    findRandomWordInList(wordsInListArray, sizeList, propositionWord);
+                    {
+                        printf("La proposition de l'ordinateur est : %s\n", propositionWord);
+                    }
+                }
+            }
         }
     }
 
-    int commonLetter = compareWords(wordToFind, propositionWord);
-    {
-        if (commonLetter)
-        {
-            printf("Score :%d\n", commonLetter);
-        }
-    }
     return 0;
 }

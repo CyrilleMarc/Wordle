@@ -12,7 +12,7 @@ int loadFile(const char *filename, char ***wordsInListArray, int *sizeList)
         return 1;
     }
     *sizeList = 0;
-    char word[6];
+    const char word[6] = {0};
     while (fscanf(file, "%s", word) == 1)
     {
         (*sizeList)++;
@@ -52,11 +52,11 @@ int findRandomWordInList(char **wordsInListArray, int sizeList, char *wordToFind
 
 int firstResult(const char *wordToFind, const char *propositionWord)
 {
-    int boolFirstResult = strcmp(wordToFind, propositionWord);
-    return boolFirstResult;
+    int FirstResult = strcmp(wordToFind, propositionWord);
+    return FirstResult;
 }
 
-int compareWords(char *wordToFind, char *propositionWord)
+int scoring(char *wordToFind, char *propositionWord)
 {
     int commonLetter = 0;
     for (int i = 0; i < 5; ++i)
@@ -71,4 +71,18 @@ int compareWords(char *wordToFind, char *propositionWord)
         }
     }
     return commonLetter;
+}
+
+int findBestWordInList(char **wordsInListArray, int sizeList, const char propositionWord)
+{
+    char word[6];
+    for (int i = 0; i < sizeList; ++i)
+    {
+        word[6] = wordsInListArray[i];
+    }
+    int commonLetter = compareWords(word, propositionWord);
+
+    if (commonLetter)
+    {
+    }
 }
