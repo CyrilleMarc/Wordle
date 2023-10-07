@@ -12,7 +12,7 @@ int matrix[NB_LIGNES][NB_LIGNES] =
 
 void displayMatrix(int tab[NB_LIGNES][NB_LIGNES])
 {
-    int countRow, countColumn;
+    int countRow, countColumn = 0;
     for (countRow = 0; countRow < NB_LIGNES; ++countRow)
     {
         for (countColumn = 0; countColumn < NB_LIGNES; ++countColumn)
