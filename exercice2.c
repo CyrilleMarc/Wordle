@@ -1,7 +1,3 @@
-/*
-exercices issus de :
-https://www.lamsade.dauphine.fr/~manouvri/C/PolyExoC_MM.pdf
-*/
 
 #include <stdio.h>
 
