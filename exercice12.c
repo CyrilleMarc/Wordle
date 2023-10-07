@@ -7,16 +7,18 @@ int main()
 {
     int *pstart = NULL;
     int *pend = NULL;
-    int *pNumber = NULL;
+    int *pCount = NULL;
 
     pstart = &t[0];
     pend = &t[TAILLE_MAX - 1];
 
-    for (pNumber = pstart; pNumber <= pend; ++pNumber)
+    for (pCount = pstart; pCount <= pend; ++pCount)
     {
-        if (*pNumber == 0)
+        if (*pCount == 0)
         {
-            printf("index = %ld et valeur = %d\n", (long)(pNumber - pstart), *pNumber);
+            printf("index = %ld et valeur = %d\n", (long)(pCount - pstart), *pCount);
+            int test = pCount - pstart;
+            printf("resultat : %d \n", test);
         }
     }
 
