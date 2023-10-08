@@ -9,12 +9,12 @@ void swap(int *a, int *b)
 
 int partition(int arr[], int low, int high)
 {
-    int pivot = arr[high]; 
-    int i = (low - 1);   
+    int pivot = arr[high];
+    int i = (low - 1);
 
     for (int j = low; j <= high - 1; j++)
     {
-       
+
         if (arr[j] <= pivot)
         {
             i++;
@@ -29,7 +29,7 @@ void quickSort(int arr[], int low, int high)
 {
     if (low < high)
     {
-    
+
         int pi = partition(arr, low, high);
 
         quickSort(arr, low, pi - 1);
@@ -51,7 +51,7 @@ int main()
 
     quickSort(arr, 0, size - 1);
 
-    printf("Tableau après le tri :\n");
+    printf("Tableau après le tri rapide :\n");
     for (int i = 0; i < size; i++)
     {
         printf("%d ", arr[i]);
