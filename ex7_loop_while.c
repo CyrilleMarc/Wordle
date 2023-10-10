@@ -2,6 +2,36 @@
 
 int main()
 {
+    int n = 0;
+    while (n <= 5)
+        n++;
+    printf("%d\n", n);
+
+    return 0;
+    //*********************************************
+    // int n = 0;
+    // do
+    // {
+    //     if (n % 2 == 0)
+    //     {
+    //         printf("%d est paire\n", n);
+    //         n += 3;
+    //         continue;
+    //     }
+    //     if (n % 3 == 0)
+    //     {
+    //         printf("%d est un multiple de 3\n", n);
+    //         n += 5;
+    //     }
+    //     if (n % 5 == 0)
+    //     {
+    //         printf("%d est un multiple de 5\n", n);
+    //         break;
+    //     }
+    //     n += 1;
+    // } while (1);
+    //*******************************************************
+
     // int i = 0;
     // int n = 0;
     // int som = 0;
@@ -21,7 +51,7 @@ int main()
     //     printf("%d\n", som);
     //     ++i;
     // }
-    return 0;
+
     // int n;
     // do
     // {
